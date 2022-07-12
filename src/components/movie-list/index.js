@@ -42,7 +42,7 @@ export default class MovieList extends Component {
         <ul className="mt-50 styled" data-testid="movieList">
           {this.state.result.map((res, index) => {
                 return (
-                  <li className="slide-up-fade-in py-10" key={index + 1 }><Link>{res.Title}</Link></li>
+                  <li className="slide-up-fade-in py-10" key={index + 1 }><Link to="/google.com">{res.Title}</Link></li>
                   );
                 })    
               }
