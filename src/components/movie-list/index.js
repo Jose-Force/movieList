@@ -13,12 +13,11 @@ export default class MovieList extends Component {
 
   handleYearChange = (e) => {
     this.setState({selectedYear: e.target.value});
-    const gaEventTracker = useAnalytics("Busqueda");
+    const gaEventTracker = useAnalytics("Search");
     gaEventTracker(e.target.value);
   }
 
-  onClick = (event) => {
-    // Code written in next line is to take care of adding active class to selected year for css purpose.
+  onClick = () => {
     this.resolveData(this.state.selectedYear);
   }
 
@@ -35,7 +34,7 @@ export default class MovieList extends Component {
     return (
       <div className="layout-column align-items-center mt-50">
         <section className="layout-row align-items-center justify-content-center">
-          <input type="number" className="large" placeholder="Enter Year eg 2015" data-testid="app-input" onBlur={this.handleYearChange}/>
+          <input type="number" className="large" placeholder="Enter Year eg 2022" data-testid="app-input" onBlur={this.handleYearChange}/>
           <button className="" data-testid="submit-button"  onClick={(e)=>this.onClick(e)} >Search</button>
         </section>
         {this.state.selectedYear && this.state.result.length > 0 &&
