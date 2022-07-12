@@ -16,6 +16,9 @@ function App() {
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.set({ dimension14: 'Sports' });
+    ReactGA.pageview('/prueba');
+    ReactGA.pageview('/');
   });
 
   return (
