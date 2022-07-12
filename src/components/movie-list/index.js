@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 import useAnalytics from './useAnalytics';
 
@@ -41,7 +42,7 @@ export default class MovieList extends Component {
         <ul className="mt-50 styled" data-testid="movieList">
           {this.state.result.map((res, index) => {
                 return (
-                  <li className="slide-up-fade-in py-10" key={index + 1 }>{res.Title}</li>
+                  <li className="slide-up-fade-in py-10" key={index + 1 }><Link>{res.Title}</Link></li>
                   );
                 })    
               }
