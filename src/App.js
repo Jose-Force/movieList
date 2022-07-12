@@ -4,6 +4,8 @@ import MovieList from './components/movie-list/index.js';
 import 'h8k-components';
 import { useEffect } from 'react';
 import ReactGA from 'react-ga';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Prueba from './components/prueba/Prueba';
 
 const TRACKING_ID = "UA-234218352-1"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
@@ -17,10 +19,15 @@ function App() {
   });
 
   return (
-    <div>
-      <h8k-navbar header={title} />
-      <MovieList/>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path='/prueba' element ={<Prueba />}></Route>
+          <Route path='/' element = {<MovieList/>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+
   );
 }
 
